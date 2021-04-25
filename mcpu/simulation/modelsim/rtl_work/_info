@@ -1,0 +1,272 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/ASUS/Desktop/mcpu_2/mcpu/simulation/modelsim
+vALU
+Z1 !s110 1604844210
+!i10b 1
+!s100 4JYIWRiNk>I7mJ7d7P;k;2
+IGFVga^gEZa?T^`Qo::okR0
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+w1604233288
+8C:/Users/ASUS/Desktop/mcpu_2/mcpu/ALU.v
+FC:/Users/ASUS/Desktop/mcpu_2/mcpu/ALU.v
+L0 3
+Z3 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1604844210.113000
+!s107 C:/Users/ASUS/Desktop/mcpu_2/mcpu/ALU.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu|C:/Users/ASUS/Desktop/mcpu_2/mcpu/ALU.v|
+!i113 1
+Z4 o-vlog01compat -work work
+Z5 !s92 -vlog01compat -work work +incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu
+n@a@l@u
+vcontrolUnit
+R1
+!i10b 1
+!s100 UhP@aQW?g8SFlWV7@K:243
+I>]7Vb8o`gPTf72`:kkMGc2
+R2
+R0
+w1604810588
+8C:/Users/ASUS/Desktop/mcpu_2/mcpu/controlUnit.v
+FC:/Users/ASUS/Desktop/mcpu_2/mcpu/controlUnit.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1604844209.972000
+!s107 C:/Users/ASUS/Desktop/mcpu_2/mcpu/controlUnit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu|C:/Users/ASUS/Desktop/mcpu_2/mcpu/controlUnit.v|
+!i113 1
+R4
+R5
+ncontrol@unit
+vDataLate
+R1
+!i10b 1
+!s100 13MXKPF:L`GMlN`gf9fg]0
+ITC9SXzEd^^<@U:136Q9d20
+R2
+R0
+Z6 w1604758195
+8C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataLate.v
+FC:/Users/ASUS/Desktop/mcpu_2/mcpu/DataLate.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1604844210.654000
+!s107 C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataLate.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu|C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataLate.v|
+!i113 1
+R4
+R5
+n@data@late
+vDataMemory
+R1
+!i10b 1
+!s100 ;RISB^^hdSC?6E;8?:EM_3
+Id5dNE:KbcJo@HM]_gSCOm1
+R2
+R0
+w1604810649
+8C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataMemory.v
+FC:/Users/ASUS/Desktop/mcpu_2/mcpu/DataMemory.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1604844210.875000
+!s107 C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataMemory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu|C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataMemory.v|
+!i113 1
+R4
+R5
+n@data@memory
+vDataSelect_2
+R1
+!i10b 1
+!s100 DgNd]^PeE4W4d06>ei[LG2
+IfNKe1;Bzm3Vk9@TOPg9;<0
+R2
+R0
+w1604225787
+8C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataSelect_2.v
+FC:/Users/ASUS/Desktop/mcpu_2/mcpu/DataSelect_2.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1604844210.561000
+!s107 C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataSelect_2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu|C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataSelect_2.v|
+!i113 1
+R4
+R5
+n@data@select_2
+vExtend
+R1
+!i10b 1
+!s100 0kme6Vm:X1B?iEDJ8nb_32
+I[OhOz^[MFiQ3KhF[V=2ai2
+R2
+R0
+w1604231801
+8C:/Users/ASUS/Desktop/mcpu_2/mcpu/Extend.v
+FC:/Users/ASUS/Desktop/mcpu_2/mcpu/Extend.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1604844210.366000
+!s107 C:/Users/ASUS/Desktop/mcpu_2/mcpu/Extend.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu|C:/Users/ASUS/Desktop/mcpu_2/mcpu/Extend.v|
+!i113 1
+R4
+R5
+n@extend
+vInsMemory
+Z7 !s110 1604844211
+!i10b 1
+!s100 :2I69`Y;>BTeOGagF^_cG3
+Ih@>ENEmC^UMLgWP8XFQ3:1
+R2
+R0
+w1604810648
+8C:/Users/ASUS/Desktop/mcpu_2/mcpu/InsMemory.v
+FC:/Users/ASUS/Desktop/mcpu_2/mcpu/InsMemory.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1604844211.009000
+!s107 C:/Users/ASUS/Desktop/mcpu_2/mcpu/InsMemory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu|C:/Users/ASUS/Desktop/mcpu_2/mcpu/InsMemory.v|
+!i113 1
+R4
+R5
+n@ins@memory
+vmcpu
+R1
+!i10b 1
+!s100 ;8DHD2aeo<>>IMMc=`hWI3
+I5SV:aQ<050:bYVOOg7GhA1
+R2
+R0
+w1604752440
+8C:/Users/ASUS/Desktop/mcpu_2/mcpu/mcpu.v
+FC:/Users/ASUS/Desktop/mcpu_2/mcpu/mcpu.v
+L0 15
+R3
+r1
+!s85 0
+31
+!s108 1604844210.750000
+!s107 C:/Users/ASUS/Desktop/mcpu_2/mcpu/mcpu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu|C:/Users/ASUS/Desktop/mcpu_2/mcpu/mcpu.v|
+!i113 1
+R4
+R5
+vmcpu_tst
+R7
+!i10b 1
+!s100 8f6^^nJ9mYHH;UN0=FM7O0
+IhD5dL[TEdPZzn6fDO:h_X1
+R2
+R0
+w1604810571
+8C:/Users/ASUS/Desktop/mcpu_2/mcpu/../mcpu_tst.v
+FC:/Users/ASUS/Desktop/mcpu_2/mcpu/../mcpu_tst.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1604844211.119000
+!s107 C:/Users/ASUS/Desktop/mcpu_2/mcpu/../mcpu_tst.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu/..|C:/Users/ASUS/Desktop/mcpu_2/mcpu/../mcpu_tst.v|
+!i113 1
+R4
+!s92 -vlog01compat -work work +incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu/..
+vPC
+R1
+!i10b 1
+!s100 ;3mJEoM@dU1FYiBZNHI8>2
+IE_Sh9LOg>n981M:bP>Tan0
+R2
+R0
+w1604237113
+8C:/Users/ASUS/Desktop/mcpu_2/mcpu/PC.v
+FC:/Users/ASUS/Desktop/mcpu_2/mcpu/PC.v
+L0 2
+R3
+r1
+!s85 0
+31
+!s108 1604844210.190000
+!s107 C:/Users/ASUS/Desktop/mcpu_2/mcpu/PC.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu|C:/Users/ASUS/Desktop/mcpu_2/mcpu/PC.v|
+!i113 1
+R4
+R5
+n@p@c
+vPCAddr
+R1
+!i10b 1
+!s100 `?Ic7lHU1YEUa;2@BdVKS1
+IkWHTi=8F0`zSSXAM;o7803
+R2
+R0
+w1604752759
+8C:/Users/ASUS/Desktop/mcpu_2/mcpu/PCAddr.v
+FC:/Users/ASUS/Desktop/mcpu_2/mcpu/PCAddr.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1604844210.274000
+!s107 C:/Users/ASUS/Desktop/mcpu_2/mcpu/PCAddr.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu|C:/Users/ASUS/Desktop/mcpu_2/mcpu/PCAddr.v|
+!i113 1
+R4
+R5
+n@p@c@addr
+vRegFile
+R1
+!i10b 1
+!s100 S6gaYJdGPh;m]Idd:;OGS1
+IVz_m^7mVMUdGh:^B]C36U2
+R2
+R0
+R6
+8C:/Users/ASUS/Desktop/mcpu_2/mcpu/RegFile.v
+FC:/Users/ASUS/Desktop/mcpu_2/mcpu/RegFile.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1604844210.465000
+!s107 C:/Users/ASUS/Desktop/mcpu_2/mcpu/RegFile.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu|C:/Users/ASUS/Desktop/mcpu_2/mcpu/RegFile.v|
+!i113 1
+R4
+R5
+n@reg@file

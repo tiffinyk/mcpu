@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at controlUnit.v(49): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at RegFile.v(21): always construct contains both blocking and non-blocking assignments

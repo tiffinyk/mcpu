@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Nov 08 13:10:12 2020
+Quartus II 64-Bit Version : 15.0.0 Build 145 04/22/2015 SJ Full Version
+Revision Name : mcpu
+Top-level Entity Name : mcpu
+Family : Cyclone IV E
+Total logic elements : 177
+    Total combinational functions : 112
+    Dedicated logic registers : 165
+Total registers : 165
+Total pins : 187
+Total virtual pins : 0
+Total memory bits : 64
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

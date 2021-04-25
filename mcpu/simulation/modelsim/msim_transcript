@@ -1,0 +1,162 @@
+# Reading D:/altera/modelsim_ase/tcl/vsim/pref.tcl
+# do mcpu_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying D:/altera/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:/altera/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu {C:/Users/ASUS/Desktop/mcpu_2/mcpu/controlUnit.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:03:29 on Nov 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu" C:/Users/ASUS/Desktop/mcpu_2/mcpu/controlUnit.v 
+# -- Compiling module controlUnit
+# 
+# Top level modules:
+# 	controlUnit
+# End time: 22:03:30 on Nov 08,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu {C:/Users/ASUS/Desktop/mcpu_2/mcpu/ALU.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:03:30 on Nov 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu" C:/Users/ASUS/Desktop/mcpu_2/mcpu/ALU.v 
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# End time: 22:03:30 on Nov 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu {C:/Users/ASUS/Desktop/mcpu_2/mcpu/PC.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:03:30 on Nov 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu" C:/Users/ASUS/Desktop/mcpu_2/mcpu/PC.v 
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 22:03:30 on Nov 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu {C:/Users/ASUS/Desktop/mcpu_2/mcpu/PCAddr.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:03:30 on Nov 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu" C:/Users/ASUS/Desktop/mcpu_2/mcpu/PCAddr.v 
+# -- Compiling module PCAddr
+# 
+# Top level modules:
+# 	PCAddr
+# End time: 22:03:30 on Nov 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu {C:/Users/ASUS/Desktop/mcpu_2/mcpu/Extend.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:03:30 on Nov 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu" C:/Users/ASUS/Desktop/mcpu_2/mcpu/Extend.v 
+# -- Compiling module Extend
+# 
+# Top level modules:
+# 	Extend
+# End time: 22:03:30 on Nov 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu {C:/Users/ASUS/Desktop/mcpu_2/mcpu/RegFile.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:03:30 on Nov 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu" C:/Users/ASUS/Desktop/mcpu_2/mcpu/RegFile.v 
+# -- Compiling module RegFile
+# 
+# Top level modules:
+# 	RegFile
+# End time: 22:03:30 on Nov 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu {C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataSelect_2.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:03:30 on Nov 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu" C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataSelect_2.v 
+# -- Compiling module DataSelect_2
+# 
+# Top level modules:
+# 	DataSelect_2
+# End time: 22:03:30 on Nov 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu {C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataLate.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:03:30 on Nov 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu" C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataLate.v 
+# -- Compiling module DataLate
+# 
+# Top level modules:
+# 	DataLate
+# End time: 22:03:30 on Nov 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu {C:/Users/ASUS/Desktop/mcpu_2/mcpu/mcpu.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:03:30 on Nov 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu" C:/Users/ASUS/Desktop/mcpu_2/mcpu/mcpu.v 
+# -- Compiling module mcpu
+# 
+# Top level modules:
+# 	mcpu
+# End time: 22:03:30 on Nov 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu {C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataMemory.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:03:30 on Nov 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu" C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataMemory.v 
+# -- Compiling module DataMemory
+# 
+# Top level modules:
+# 	DataMemory
+# End time: 22:03:30 on Nov 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu {C:/Users/ASUS/Desktop/mcpu_2/mcpu/InsMemory.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:03:30 on Nov 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu" C:/Users/ASUS/Desktop/mcpu_2/mcpu/InsMemory.v 
+# -- Compiling module InsMemory
+# 
+# Top level modules:
+# 	InsMemory
+# End time: 22:03:31 on Nov 08,2020, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu/.. {C:/Users/ASUS/Desktop/mcpu_2/mcpu/../mcpu_tst.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 22:03:31 on Nov 08,2020
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/ASUS/Desktop/mcpu_2/mcpu/.." C:/Users/ASUS/Desktop/mcpu_2/mcpu/../mcpu_tst.v 
+# -- Compiling module mcpu_tst
+# 
+# Top level modules:
+# 	mcpu_tst
+# End time: 22:03:31 on Nov 08,2020, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  mcpu_tst
+# vsim -gui "+altera" -l msim_transcript -do "mcpu_run_msim_rtl_verilog.do" 
+# Start time: 22:03:31 on Nov 08,2020
+# Loading work.mcpu_tst
+# Loading work.mcpu
+# Loading work.PC
+# Loading work.InsMemory
+# Loading work.PCAddr
+# Loading work.RegFile
+# Loading work.DataLate
+# Loading work.Extend
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.DataSelect_2
+# Loading work.controlUnit
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break key hit
+# Simulation stop requested.
+# End time: 23:11:35 on Nov 08,2020, Elapsed time: 1:08:04
+# Errors: 0, Warnings: 0

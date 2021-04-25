@@ -1,0 +1,11 @@
+
+State Machine - |mcpu|controlUnit:control|state
+Name state.wb1 state.exe1 state.exe2 state.wb2 state.smem state.exe3 state.sid state.sif 
+state.sif 0 0 0 0 0 0 0 0 
+state.sid 0 0 0 0 0 0 1 1 
+state.exe3 0 0 0 0 0 1 0 1 
+state.smem 0 0 0 0 1 0 0 1 
+state.wb2 0 0 0 1 0 0 0 1 
+state.exe2 0 0 1 0 0 0 0 1 
+state.exe1 0 1 0 0 0 0 0 1 
+state.wb1 1 0 0 0 0 0 0 1 

@@ -1,0 +1,1803 @@
+Analysis & Synthesis report for mcpu
+Sun Nov 08 13:10:12 2020
+Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |mcpu|controlUnit:control|state
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Source assignments for RegFile:regfile|altsyncram:register_rtl_0|altsyncram_im22:auto_generated
+ 15. Parameter Settings for User Entity Instance: controlUnit:control
+ 16. Parameter Settings for Inferred Entity Instance: RegFile:regfile|altsyncram:register_rtl_0
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+ 21. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Nov 08 13:10:12 2020       ;
+; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 SJ Full Version ;
+; Revision Name                      ; mcpu                                        ;
+; Top-level Entity Name              ; mcpu                                        ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 177                                         ;
+;     Total combinational functions  ; 112                                         ;
+;     Dedicated logic registers      ; 165                                         ;
+; Total registers                    ; 165                                         ;
+; Total pins                         ; 187                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 64                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; mcpu               ; mcpu               ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                               ;
++----------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path       ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                            ; Library ;
++----------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------+---------+
+; controlUnit.v                          ; yes             ; User Verilog HDL File                                 ; C:/Users/ASUS/Desktop/mcpu_2/mcpu/controlUnit.v                         ;         ;
+; ALU.v                                  ; yes             ; User Verilog HDL File                                 ; C:/Users/ASUS/Desktop/mcpu_2/mcpu/ALU.v                                 ;         ;
+; PC.v                                   ; yes             ; User Verilog HDL File                                 ; C:/Users/ASUS/Desktop/mcpu_2/mcpu/PC.v                                  ;         ;
+; PCAddr.v                               ; yes             ; User Verilog HDL File                                 ; C:/Users/ASUS/Desktop/mcpu_2/mcpu/PCAddr.v                              ;         ;
+; Extend.v                               ; yes             ; User Verilog HDL File                                 ; C:/Users/ASUS/Desktop/mcpu_2/mcpu/Extend.v                              ;         ;
+; DataMemory.v                           ; yes             ; User Verilog HDL File                                 ; C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataMemory.v                          ;         ;
+; InsMemory.v                            ; yes             ; User Verilog HDL File                                 ; C:/Users/ASUS/Desktop/mcpu_2/mcpu/InsMemory.v                           ;         ;
+; RegFile.v                              ; yes             ; User Verilog HDL File                                 ; C:/Users/ASUS/Desktop/mcpu_2/mcpu/RegFile.v                             ;         ;
+; DataSelect_2.v                         ; yes             ; User Verilog HDL File                                 ; C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataSelect_2.v                        ;         ;
+; DataLate.v                             ; yes             ; User Verilog HDL File                                 ; C:/Users/ASUS/Desktop/mcpu_2/mcpu/DataLate.v                            ;         ;
+; mcpu.v                                 ; yes             ; User Verilog HDL File                                 ; C:/Users/ASUS/Desktop/mcpu_2/mcpu/mcpu.v                                ;         ;
+; /users/asus/desktop/mcpu_2/my_ins.txt  ; yes             ; Auto-Found File                                       ; /users/asus/desktop/mcpu_2/my_ins.txt                                   ;         ;
+; /users/asus/desktop/mcpu_2/my_data.txt ; yes             ; Auto-Found File                                       ; /users/asus/desktop/mcpu_2/my_data.txt                                  ;         ;
+; altsyncram.tdf                         ; yes             ; Megafunction                                          ; d:/altera/quartus/libraries/megafunctions/altsyncram.tdf                ;         ;
+; stratix_ram_block.inc                  ; yes             ; Megafunction                                          ; d:/altera/quartus/libraries/megafunctions/stratix_ram_block.inc         ;         ;
+; lpm_mux.inc                            ; yes             ; Megafunction                                          ; d:/altera/quartus/libraries/megafunctions/lpm_mux.inc                   ;         ;
+; lpm_decode.inc                         ; yes             ; Megafunction                                          ; d:/altera/quartus/libraries/megafunctions/lpm_decode.inc                ;         ;
+; aglobal150.inc                         ; yes             ; Megafunction                                          ; d:/altera/quartus/libraries/megafunctions/aglobal150.inc                ;         ;
+; a_rdenreg.inc                          ; yes             ; Megafunction                                          ; d:/altera/quartus/libraries/megafunctions/a_rdenreg.inc                 ;         ;
+; altrom.inc                             ; yes             ; Megafunction                                          ; d:/altera/quartus/libraries/megafunctions/altrom.inc                    ;         ;
+; altram.inc                             ; yes             ; Megafunction                                          ; d:/altera/quartus/libraries/megafunctions/altram.inc                    ;         ;
+; altdpram.inc                           ; yes             ; Megafunction                                          ; d:/altera/quartus/libraries/megafunctions/altdpram.inc                  ;         ;
+; db/altsyncram_im22.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ASUS/Desktop/mcpu_2/mcpu/db/altsyncram_im22.tdf                ;         ;
+; db/mcpu.ram0_regfile_be88a862.hdl.mif  ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/ASUS/Desktop/mcpu_2/mcpu/db/mcpu.ram0_regfile_be88a862.hdl.mif ;         ;
++----------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 177       ;
+;                                             ;           ;
+; Total combinational functions               ; 112       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 10        ;
+;     -- 3 input functions                    ; 32        ;
+;     -- <=2 input functions                  ; 70        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 24        ;
+;     -- arithmetic mode                      ; 88        ;
+;                                             ;           ;
+; Total registers                             ; 165       ;
+;     -- Dedicated logic registers            ; 165       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 187       ;
+; Total memory bits                           ; 64        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 197       ;
+; Total fan-out                               ; 1166      ;
+; Average fan-out                             ; 1.71      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                   ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
+; |mcpu                                     ; 112 (1)           ; 165 (0)      ; 64          ; 0            ; 0       ; 0         ; 187  ; 0            ; |mcpu                                                                          ; work         ;
+;    |ALU:alu|                              ; 43 (43)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcpu|ALU:alu                                                                  ; work         ;
+;    |DataLate:ADR|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcpu|DataLate:ADR                                                             ; work         ;
+;    |DataLate:ALUM2DR|                     ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcpu|DataLate:ALUM2DR                                                         ; work         ;
+;    |DataLate:BDR|                         ; 0 (0)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcpu|DataLate:BDR                                                             ; work         ;
+;    |PC:pc|                                ; 30 (30)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcpu|PC:pc                                                                    ; work         ;
+;    |RegFile:regfile|                      ; 32 (32)           ; 32 (32)      ; 64          ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcpu|RegFile:regfile                                                          ; work         ;
+;       |altsyncram:register_rtl_0|         ; 0 (0)             ; 0 (0)        ; 64          ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcpu|RegFile:regfile|altsyncram:register_rtl_0                                ; work         ;
+;          |altsyncram_im22:auto_generated| ; 0 (0)             ; 0 (0)        ; 64          ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcpu|RegFile:regfile|altsyncram:register_rtl_0|altsyncram_im22:auto_generated ; work         ;
+;    |controlUnit:control|                  ; 6 (6)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mcpu|controlUnit:control                                                      ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                       ;
++-------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+---------------------------------------+
+; Name                                                                                ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                   ;
++-------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+---------------------------------------+
+; RegFile:regfile|altsyncram:register_rtl_0|altsyncram_im22:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/mcpu.ram0_RegFile_be88a862.hdl.mif ;
++-------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+---------------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------+
+; State Machine - |mcpu|controlUnit:control|state                                                                ;
++------------+-----------+------------+------------+-----------+------------+------------+-----------+-----------+
+; Name       ; state.wb1 ; state.exe1 ; state.exe2 ; state.wb2 ; state.smem ; state.exe3 ; state.sid ; state.sif ;
++------------+-----------+------------+------------+-----------+------------+------------+-----------+-----------+
+; state.sif  ; 0         ; 0          ; 0          ; 0         ; 0          ; 0          ; 0         ; 0         ;
+; state.sid  ; 0         ; 0          ; 0          ; 0         ; 0          ; 0          ; 1         ; 1         ;
+; state.exe3 ; 0         ; 0          ; 0          ; 0         ; 0          ; 1          ; 0         ; 1         ;
+; state.smem ; 0         ; 0          ; 0          ; 0         ; 1          ; 0          ; 0         ; 1         ;
+; state.wb2  ; 0         ; 0          ; 0          ; 1         ; 0          ; 0          ; 0         ; 1         ;
+; state.exe2 ; 0         ; 0          ; 1          ; 0         ; 0          ; 0          ; 0         ; 1         ;
+; state.exe1 ; 0         ; 1          ; 0          ; 0         ; 0          ; 0          ; 0         ; 1         ;
+; state.wb1  ; 1         ; 0          ; 0          ; 0         ; 0          ; 0          ; 0         ; 1         ;
++------------+-----------+------------+------------+-----------+------------+------------+-----------+-----------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; InsMemory:insmemory|ins[0..31]         ; Stuck at GND due to stuck port data_in ;
+; DataLate:ALUout|o_data[6..31]          ; Lost fanout                            ;
+; PC:pc|Address[1]                       ; Merged with PC:pc|Address[0]           ;
+; PC:pc|Address[0]                       ; Stuck at GND due to stuck port data_in ;
+; DataLate:ALUout|o_data[0..5]           ; Lost fanout                            ;
+; controlUnit:control|state.wb2          ; Lost fanout                            ;
+; controlUnit:control|state.exe2         ; Lost fanout                            ;
+; controlUnit:control|state~2            ; Lost fanout                            ;
+; controlUnit:control|state~3            ; Lost fanout                            ;
+; controlUnit:control|state~4            ; Lost fanout                            ;
+; controlUnit:control|state.exe3         ; Stuck at GND due to stuck port data_in ;
+; controlUnit:control|state.smem         ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 73 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                               ;
++-----------------------------+---------------------------+---------------------------------------------------------------------------------+
+; Register name               ; Reason for Removal        ; Registers Removed due to This Register                                          ;
++-----------------------------+---------------------------+---------------------------------------------------------------------------------+
+; InsMemory:insmemory|ins[0]  ; Stuck at GND              ; DataLate:ALUout|o_data[3], DataLate:ALUout|o_data[4], DataLate:ALUout|o_data[5] ;
+;                             ; due to stuck port data_in ;                                                                                 ;
+; InsMemory:insmemory|ins[17] ; Stuck at GND              ; controlUnit:control|state.exe3                                                  ;
+;                             ; due to stuck port data_in ;                                                                                 ;
+; InsMemory:insmemory|ins[18] ; Stuck at GND              ; controlUnit:control|state.smem                                                  ;
+;                             ; due to stuck port data_in ;                                                                                 ;
+; InsMemory:insmemory|ins[26] ; Stuck at GND              ; PC:pc|Address[0]                                                                ;
+;                             ; due to stuck port data_in ;                                                                                 ;
++-----------------------------+---------------------------+---------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 165   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 30    ;
+; Number of registers using Asynchronous Clear ; 30    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 29    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                         ;
++------------------------------+--------------------------------+------+
+; Register Name                ; Megafunction                   ; Type ;
++------------------------------+--------------------------------+------+
+; RegFile:regfile|data1[0..31] ; RegFile:regfile|register_rtl_0 ; RAM  ;
+; RegFile:regfile|data2[0..31] ; RegFile:regfile|register_rtl_0 ; RAM  ;
++------------------------------+--------------------------------+------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Source assignments for RegFile:regfile|altsyncram:register_rtl_0|altsyncram_im22:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------+
+; Assignment                      ; Value              ; From ; To                                ;
++---------------------------------+--------------------+------+-----------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                 ;
++---------------------------------+--------------------+------+-----------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: controlUnit:control ;
++----------------+--------+----------------------------------------+
+; Parameter Name ; Value  ; Type                                   ;
++----------------+--------+----------------------------------------+
+; sif            ; 000    ; Unsigned Binary                        ;
+; sid            ; 001    ; Unsigned Binary                        ;
+; exe1           ; 110    ; Unsigned Binary                        ;
+; exe2           ; 101    ; Unsigned Binary                        ;
+; exe3           ; 010    ; Unsigned Binary                        ;
+; smem           ; 011    ; Unsigned Binary                        ;
+; wb1            ; 111    ; Unsigned Binary                        ;
+; wb2            ; 100    ; Unsigned Binary                        ;
+; add            ; 000000 ; Unsigned Binary                        ;
+; sub            ; 000001 ; Unsigned Binary                        ;
+; And            ; 010001 ; Unsigned Binary                        ;
+; Or             ; 010000 ; Unsigned Binary                        ;
+; Nor            ; 100110 ; Unsigned Binary                        ;
+; slt            ; 100111 ; Unsigned Binary                        ;
+; sw             ; 110000 ; Unsigned Binary                        ;
+; lw             ; 110001 ; Unsigned Binary                        ;
+; beq            ; 110100 ; Unsigned Binary                        ;
+; j              ; 111000 ; Unsigned Binary                        ;
++----------------+--------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: RegFile:regfile|altsyncram:register_rtl_0  ;
++------------------------------------+---------------------------------------+----------------+
+; Parameter Name                     ; Value                                 ; Type           ;
++------------------------------------+---------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                     ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                    ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                   ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                    ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                   ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                     ; Untyped        ;
+; OPERATION_MODE                     ; BIDIR_DUAL_PORT                       ; Untyped        ;
+; WIDTH_A                            ; 32                                    ; Untyped        ;
+; WIDTHAD_A                          ; 5                                     ; Untyped        ;
+; NUMWORDS_A                         ; 32                                    ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                          ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                  ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                  ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                  ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                  ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                  ; Untyped        ;
+; WIDTH_B                            ; 32                                    ; Untyped        ;
+; WIDTHAD_B                          ; 5                                     ; Untyped        ;
+; NUMWORDS_B                         ; 32                                    ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK0                                ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK0                                ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK0                                ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                          ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                  ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                  ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                  ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                  ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                  ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                  ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                     ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                     ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                  ; Untyped        ;
+; BYTE_SIZE                          ; 8                                     ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                              ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; OLD_DATA                              ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                  ; Untyped        ;
+; INIT_FILE                          ; db/mcpu.ram0_RegFile_be88a862.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                     ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                       ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                       ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                 ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                 ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                     ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone IV E                          ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_im22                       ; Untyped        ;
++------------------------------------+---------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                      ;
++-------------------------------------------+-------------------------------------------+
+; Name                                      ; Value                                     ;
++-------------------------------------------+-------------------------------------------+
+; Number of entity instances                ; 1                                         ;
+; Entity Instance                           ; RegFile:regfile|altsyncram:register_rtl_0 ;
+;     -- OPERATION_MODE                     ; BIDIR_DUAL_PORT                           ;
+;     -- WIDTH_A                            ; 32                                        ;
+;     -- NUMWORDS_A                         ; 32                                        ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                              ;
+;     -- WIDTH_B                            ; 32                                        ;
+;     -- NUMWORDS_B                         ; 32                                        ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                  ;
++-------------------------------------------+-------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 187                         ;
+; cycloneiii_ff         ; 165                         ;
+;     CLR               ; 1                           ;
+;     ENA CLR           ; 29                          ;
+;     SLD               ; 30                          ;
+;     plain             ; 105                         ;
+; cycloneiii_lcell_comb ; 113                         ;
+;     arith             ; 88                          ;
+;         2 data inputs ; 56                          ;
+;         3 data inputs ; 32                          ;
+;     normal            ; 25                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 11                          ;
+;         4 data inputs ; 10                          ;
+; cycloneiii_ram_block  ; 32                          ;
+;                       ;                             ;
+; Max LUT depth         ; 7.10                        ;
+; Average LUT depth     ; 3.02                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+    Info: Processing started: Sun Nov 08 13:10:01 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mcpu -c mcpu
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file controlunit.v
+    Info (12023): Found entity 1: controlUnit
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: ALU
+Info (12021): Found 1 design units, including 1 entities, in source file pc.v
+    Info (12023): Found entity 1: PC
+Info (12021): Found 1 design units, including 1 entities, in source file pcaddr.v
+    Info (12023): Found entity 1: PCAddr
+Info (12021): Found 1 design units, including 1 entities, in source file extend.v
+    Info (12023): Found entity 1: Extend
+Info (12021): Found 1 design units, including 1 entities, in source file datamemory.v
+    Info (12023): Found entity 1: DataMemory
+Info (12021): Found 1 design units, including 1 entities, in source file insmemory.v
+    Info (12023): Found entity 1: InsMemory
+Info (12021): Found 1 design units, including 1 entities, in source file regfile.v
+    Info (12023): Found entity 1: RegFile
+Info (12021): Found 1 design units, including 1 entities, in source file dataselect_2.v
+    Info (12023): Found entity 1: DataSelect_2
+Info (12021): Found 1 design units, including 1 entities, in source file datalate.v
+    Info (12023): Found entity 1: DataLate
+Info (12021): Found 1 design units, including 1 entities, in source file mcpu.v
+    Info (12023): Found entity 1: mcpu
+Info (12127): Elaborating entity "mcpu" for the top level hierarchy
+Info (12128): Elaborating entity "PC" for hierarchy "PC:pc"
+Info (12128): Elaborating entity "InsMemory" for hierarchy "InsMemory:insmemory"
+Warning (10850): Verilog HDL warning at InsMemory.v(11): number of words (52) in memory file does not match the number of elements in the address range [0:127]
+Warning (10855): Verilog HDL warning at InsMemory.v(10): initial value for variable mem should be constant
+Warning (10240): Verilog HDL Always Construct warning at InsMemory.v(15): inferring latch(es) for variable "ins_out", which holds its previous value in one or more paths through the always construct
+Warning (10030): Net "mem" at InsMemory.v(8) has no driver or initial value, using a default initial value '0'
+Info (10041): Inferred latch for "ins_out[0]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[1]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[2]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[3]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[4]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[5]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[6]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[7]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[8]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[9]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[10]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[11]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[12]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[13]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[14]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[15]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[16]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[17]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[18]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[19]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[20]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[21]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[22]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[23]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[24]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[25]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[26]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[27]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[28]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[29]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[30]" at InsMemory.v(16)
+Info (10041): Inferred latch for "ins_out[31]" at InsMemory.v(16)
+Info (12128): Elaborating entity "PCAddr" for hierarchy "PCAddr:pcaddr"
+Warning (10235): Verilog HDL Always Construct warning at PCAddr.v(10): variable "PC0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at PCAddr.v(11): variable "PC4" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at PCAddr.v(11): variable "mid" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "RegFile" for hierarchy "RegFile:regfile"
+Info (12128): Elaborating entity "DataLate" for hierarchy "DataLate:ADR"
+Info (12128): Elaborating entity "Extend" for hierarchy "Extend:extend"
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:alu"
+Warning (10230): Verilog HDL assignment warning at ALU.v(15): truncated value with size 32 to match size of target (1)
+Info (12128): Elaborating entity "DataMemory" for hierarchy "DataMemory:datamemory"
+Warning (10240): Verilog HDL Always Construct warning at DataMemory.v(17): inferring latch(es) for variable "DataOut", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "DataOut[0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[8]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[9]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[10]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[11]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[12]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[13]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[14]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[15]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[16]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[17]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[18]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[19]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[20]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[21]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[22]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[23]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[24]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[25]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[26]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[27]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[28]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[29]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[30]" at DataMemory.v(25)
+Info (10041): Inferred latch for "DataOut[31]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[63][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[63][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[63][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[63][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[63][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[63][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[63][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[63][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[62][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[62][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[62][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[62][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[62][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[62][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[62][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[62][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[61][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[61][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[61][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[61][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[61][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[61][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[61][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[61][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[60][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[60][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[60][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[60][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[60][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[60][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[60][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[60][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[59][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[59][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[59][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[59][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[59][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[59][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[59][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[59][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[58][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[58][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[58][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[58][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[58][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[58][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[58][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[58][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[57][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[57][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[57][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[57][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[57][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[57][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[57][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[57][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[56][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[56][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[56][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[56][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[56][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[56][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[56][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[56][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[55][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[55][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[55][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[55][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[55][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[55][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[55][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[55][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[54][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[54][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[54][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[54][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[54][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[54][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[54][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[54][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[53][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[53][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[53][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[53][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[53][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[53][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[53][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[53][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[52][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[52][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[52][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[52][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[52][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[52][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[52][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[52][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[51][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[51][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[51][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[51][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[51][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[51][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[51][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[51][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[50][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[50][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[50][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[50][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[50][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[50][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[50][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[50][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[49][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[49][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[49][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[49][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[49][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[49][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[49][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[49][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[48][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[48][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[48][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[48][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[48][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[48][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[48][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[48][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[47][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[47][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[47][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[47][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[47][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[47][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[47][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[47][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[46][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[46][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[46][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[46][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[46][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[46][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[46][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[46][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[45][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[45][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[45][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[45][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[45][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[45][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[45][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[45][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[44][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[44][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[44][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[44][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[44][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[44][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[44][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[44][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[43][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[43][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[43][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[43][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[43][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[43][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[43][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[43][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[42][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[42][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[42][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[42][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[42][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[42][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[42][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[42][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[41][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[41][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[41][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[41][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[41][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[41][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[41][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[41][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[40][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[40][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[40][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[40][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[40][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[40][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[40][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[40][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[39][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[39][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[39][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[39][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[39][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[39][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[39][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[39][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[38][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[38][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[38][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[38][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[38][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[38][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[38][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[38][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[37][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[37][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[37][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[37][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[37][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[37][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[37][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[37][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[36][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[36][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[36][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[36][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[36][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[36][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[36][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[36][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[35][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[35][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[35][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[35][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[35][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[35][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[35][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[35][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[34][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[34][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[34][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[34][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[34][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[34][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[34][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[34][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[33][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[33][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[33][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[33][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[33][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[33][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[33][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[33][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[32][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[32][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[32][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[32][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[32][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[32][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[32][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[32][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[31][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[31][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[31][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[31][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[31][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[31][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[31][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[31][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[30][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[30][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[30][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[30][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[30][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[30][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[30][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[30][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[29][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[29][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[29][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[29][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[29][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[29][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[29][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[29][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[28][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[28][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[28][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[28][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[28][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[28][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[28][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[28][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[27][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[27][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[27][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[27][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[27][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[27][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[27][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[27][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[26][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[26][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[26][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[26][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[26][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[26][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[26][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[26][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[25][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[25][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[25][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[25][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[25][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[25][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[25][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[25][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[24][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[24][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[24][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[24][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[24][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[24][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[24][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[24][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[23][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[23][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[23][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[23][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[23][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[23][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[23][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[23][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[22][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[22][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[22][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[22][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[22][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[22][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[22][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[22][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[21][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[21][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[21][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[21][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[21][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[21][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[21][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[21][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[20][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[20][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[20][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[20][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[20][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[20][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[20][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[20][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[19][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[19][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[19][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[19][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[19][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[19][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[19][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[19][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[18][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[18][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[18][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[18][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[18][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[18][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[18][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[18][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[17][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[17][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[17][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[17][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[17][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[17][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[17][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[17][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[16][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[16][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[16][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[16][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[16][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[16][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[16][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[16][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[15][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[15][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[15][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[15][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[15][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[15][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[15][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[15][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[14][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[14][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[14][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[14][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[14][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[14][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[14][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[14][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[13][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[13][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[13][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[13][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[13][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[13][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[13][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[13][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[12][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[12][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[12][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[12][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[12][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[12][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[12][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[12][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[11][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[11][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[11][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[11][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[11][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[11][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[11][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[11][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[10][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[10][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[10][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[10][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[10][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[10][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[10][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[10][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[9][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[9][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[9][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[9][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[9][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[9][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[9][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[9][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[8][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[8][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[8][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[8][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[8][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[8][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[8][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[8][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[7][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[7][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[7][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[7][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[7][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[7][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[7][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[7][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[6][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[6][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[6][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[6][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[6][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[6][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[6][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[6][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[5][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[5][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[5][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[5][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[5][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[5][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[5][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[5][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[4][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[4][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[4][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[4][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[4][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[4][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[4][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[4][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[3][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[3][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[3][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[3][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[3][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[3][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[3][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[3][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[2][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[2][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[2][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[2][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[2][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[2][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[2][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[2][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[1][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[1][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[1][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[1][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[1][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[1][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[1][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[1][7]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[0][0]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[0][1]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[0][2]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[0][3]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[0][4]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[0][5]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[0][6]" at DataMemory.v(25)
+Info (10041): Inferred latch for "memory[0][7]" at DataMemory.v(25)
+Info (12128): Elaborating entity "DataSelect_2" for hierarchy "DataSelect_2:dataselect_2"
+Info (12128): Elaborating entity "controlUnit" for hierarchy "controlUnit:control"
+Warning (10235): Verilog HDL Always Construct warning at controlUnit.v(107): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at controlUnit.v(111): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at controlUnit.v(120): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at controlUnit.v(124): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at controlUnit.v(127): variable "zero" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at controlUnit.v(134): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[1]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[2]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[3]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[4]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[5]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[6]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[7]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[8]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[9]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[10]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[11]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[12]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[13]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[14]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[15]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[16]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[17]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[18]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[19]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[20]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[21]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[22]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[23]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[24]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[25]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[26]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[27]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[28]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[29]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[30]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[31]" is permanently enabled
+Warning (14026): LATCH primitive "DataMemory:datamemory|DataOut[0]" is permanently enabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[63][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[63][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[63][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[63][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[63][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[63][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[63][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[62][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[62][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[62][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[62][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[62][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[62][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[62][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[61][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[61][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[61][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[61][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[61][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[61][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[61][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[60][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[60][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[60][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[60][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[60][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[60][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[60][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[59][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[59][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[59][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[59][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[59][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[59][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[59][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[58][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[58][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[58][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[58][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[58][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[58][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[58][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[57][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[57][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[57][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[57][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[57][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[57][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[57][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[56][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[56][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[56][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[56][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[56][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[56][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[56][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[55][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[55][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[55][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[55][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[55][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[55][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[55][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[54][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[54][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[54][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[54][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[54][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[54][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[54][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[53][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[53][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[53][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[53][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[53][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[53][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[53][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[52][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[52][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[52][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[52][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[52][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[52][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[52][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[51][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[51][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[51][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[51][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[51][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[51][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[51][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[50][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[50][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[50][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[50][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[50][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[50][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[50][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[49][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[49][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[49][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[49][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[49][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[49][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[49][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[48][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[48][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[48][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[48][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[48][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[48][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[48][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[47][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[47][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[47][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[47][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[47][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[47][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[47][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[46][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[46][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[46][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[46][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[46][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[46][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[46][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[45][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[45][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[45][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[45][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[45][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[45][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[45][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[44][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[44][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[44][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[44][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[44][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[44][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[44][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[43][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[43][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[43][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[43][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[43][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[43][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[43][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[42][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[42][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[42][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[42][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[42][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[42][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[42][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[41][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[41][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[41][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[41][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[41][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[41][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[41][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[40][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[40][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[40][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[40][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[40][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[40][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[40][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[39][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[39][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[39][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[39][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[39][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[39][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[39][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[38][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[38][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[38][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[38][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[38][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[38][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[38][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[37][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[37][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[37][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[37][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[37][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[37][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[37][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[36][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[36][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[36][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[36][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[36][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[36][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[36][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[35][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[35][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[35][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[35][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[35][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[35][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[35][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[34][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[34][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[34][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[34][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[34][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[34][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[34][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[33][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[33][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[33][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[33][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[33][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[33][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[33][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[32][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[32][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[32][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[32][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[32][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[32][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[32][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[31][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[31][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[31][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[31][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[31][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[31][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[31][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[30][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[30][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[30][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[30][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[30][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[30][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[30][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[29][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[29][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[29][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[29][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[29][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[29][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[29][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[28][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[28][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[28][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[28][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[28][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[28][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[28][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[27][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[27][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[27][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[27][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[27][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[27][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[27][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[26][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[26][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[26][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[26][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[26][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[26][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[26][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[25][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[25][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[25][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[25][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[25][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[25][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[25][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[24][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[24][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[24][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[24][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[24][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[24][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[24][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[23][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[23][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[23][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[23][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[23][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[23][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[23][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[22][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[22][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[22][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[22][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[22][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[22][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[22][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[21][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[21][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[21][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[21][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[21][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[21][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[21][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[20][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[20][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[20][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[20][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[20][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[20][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[20][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[19][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[19][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[19][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[19][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[19][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[19][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[19][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[18][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[18][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[18][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[18][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[18][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[18][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[18][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[17][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[17][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[17][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[17][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[17][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[17][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[17][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[16][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[16][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[16][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[16][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[16][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[16][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[16][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[15][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[15][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[15][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[15][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[15][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[15][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[15][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[14][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[14][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[14][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[14][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[14][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[14][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[14][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[13][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[13][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[13][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[13][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[13][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[13][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[13][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[12][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[12][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[12][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[12][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[12][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[12][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[12][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[11][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[11][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[11][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[11][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[11][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[11][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[11][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[10][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[10][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[10][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[10][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[10][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[10][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[10][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[9][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[9][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[9][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[9][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[9][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[9][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[9][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[8][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[8][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[8][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[8][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[8][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[8][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[8][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[7][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[7][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[7][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[7][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[7][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[7][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[7][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[6][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[6][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[6][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[6][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[6][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[6][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[6][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[5][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[5][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[5][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[5][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[5][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[5][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[5][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[4][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[4][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[4][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[4][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[4][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[4][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[4][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[3][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[3][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[3][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[3][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[3][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[3][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[3][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[2][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[2][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[2][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[2][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[2][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[2][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[2][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[1][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[1][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[1][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[1][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[1][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[1][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[1][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[0][1]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[0][2]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[0][3]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[0][4]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[0][5]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[0][6]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[0][7]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[63][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[62][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[61][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[60][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[59][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[58][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[57][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[56][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[55][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[54][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[53][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[52][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[51][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[50][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[49][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[48][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[47][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[46][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[45][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[44][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[43][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[42][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[41][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[40][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[39][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[38][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[37][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[36][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[35][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[34][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[33][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[32][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[31][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[30][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[29][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[28][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[27][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[26][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[25][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[24][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[23][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[22][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[21][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[20][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[19][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[18][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[17][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[16][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[15][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[14][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[13][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[12][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[11][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[10][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[9][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[8][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[7][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[6][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[5][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[4][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[3][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[2][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[1][0]" is permanently disabled
+Warning (14025): LATCH primitive "DataMemory:datamemory|memory[0][0]" is permanently disabled
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "RegFile:regfile|register_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to BIDIR_DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTH_B set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter WIDTHAD_B set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter NUMWORDS_B set to 32
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_REG_B set to CLOCK0
+        Info (286033): Parameter WRCONTROL_WRADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter READ_DURING_WRITE_MODE_PORT_A set to OLD_DATA
+        Info (286033): Parameter INIT_FILE set to db/mcpu.ram0_RegFile_be88a862.hdl.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+Info (12130): Elaborated megafunction instantiation "RegFile:regfile|altsyncram:register_rtl_0"
+Info (12133): Instantiated megafunction "RegFile:regfile|altsyncram:register_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "BIDIR_DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTH_B" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "WIDTHAD_B" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "32"
+    Info (12134): Parameter "NUMWORDS_B" = "32"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_REG_B" = "CLOCK0"
+    Info (12134): Parameter "WRCONTROL_WRADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_PORT_A" = "OLD_DATA"
+    Info (12134): Parameter "INIT_FILE" = "db/mcpu.ram0_RegFile_be88a862.hdl.mif"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_im22.tdf
+    Info (12023): Found entity 1: altsyncram_im22
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "opcode[0]" is stuck at GND
+    Warning (13410): Pin "opcode[1]" is stuck at GND
+    Warning (13410): Pin "opcode[2]" is stuck at GND
+    Warning (13410): Pin "opcode[3]" is stuck at GND
+    Warning (13410): Pin "opcode[4]" is stuck at GND
+    Warning (13410): Pin "opcode[5]" is stuck at GND
+    Warning (13410): Pin "rs[0]" is stuck at GND
+    Warning (13410): Pin "rs[1]" is stuck at GND
+    Warning (13410): Pin "rs[2]" is stuck at GND
+    Warning (13410): Pin "rs[3]" is stuck at GND
+    Warning (13410): Pin "rs[4]" is stuck at GND
+    Warning (13410): Pin "rt[0]" is stuck at GND
+    Warning (13410): Pin "rt[1]" is stuck at GND
+    Warning (13410): Pin "rt[2]" is stuck at GND
+    Warning (13410): Pin "rt[3]" is stuck at GND
+    Warning (13410): Pin "rt[4]" is stuck at GND
+    Warning (13410): Pin "rd[0]" is stuck at GND
+    Warning (13410): Pin "rd[1]" is stuck at GND
+    Warning (13410): Pin "rd[2]" is stuck at GND
+    Warning (13410): Pin "rd[3]" is stuck at GND
+    Warning (13410): Pin "rd[4]" is stuck at GND
+    Warning (13410): Pin "ins[0]" is stuck at GND
+    Warning (13410): Pin "ins[1]" is stuck at GND
+    Warning (13410): Pin "ins[2]" is stuck at GND
+    Warning (13410): Pin "ins[3]" is stuck at GND
+    Warning (13410): Pin "ins[4]" is stuck at GND
+    Warning (13410): Pin "ins[5]" is stuck at GND
+    Warning (13410): Pin "ins[6]" is stuck at GND
+    Warning (13410): Pin "ins[7]" is stuck at GND
+    Warning (13410): Pin "ins[8]" is stuck at GND
+    Warning (13410): Pin "ins[9]" is stuck at GND
+    Warning (13410): Pin "ins[10]" is stuck at GND
+    Warning (13410): Pin "ins[11]" is stuck at GND
+    Warning (13410): Pin "ins[12]" is stuck at GND
+    Warning (13410): Pin "ins[13]" is stuck at GND
+    Warning (13410): Pin "ins[14]" is stuck at GND
+    Warning (13410): Pin "ins[15]" is stuck at GND
+    Warning (13410): Pin "ins[16]" is stuck at GND
+    Warning (13410): Pin "ins[17]" is stuck at GND
+    Warning (13410): Pin "ins[18]" is stuck at GND
+    Warning (13410): Pin "ins[19]" is stuck at GND
+    Warning (13410): Pin "ins[20]" is stuck at GND
+    Warning (13410): Pin "ins[21]" is stuck at GND
+    Warning (13410): Pin "ins[22]" is stuck at GND
+    Warning (13410): Pin "ins[23]" is stuck at GND
+    Warning (13410): Pin "ins[24]" is stuck at GND
+    Warning (13410): Pin "ins[25]" is stuck at GND
+    Warning (13410): Pin "ins[26]" is stuck at GND
+    Warning (13410): Pin "ins[27]" is stuck at GND
+    Warning (13410): Pin "ins[28]" is stuck at GND
+    Warning (13410): Pin "ins[29]" is stuck at GND
+    Warning (13410): Pin "ins[30]" is stuck at GND
+    Warning (13410): Pin "ins[31]" is stuck at GND
+    Warning (13410): Pin "pc0[0]" is stuck at GND
+    Warning (13410): Pin "pc0[1]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 37 registers lost all their fanouts during netlist optimizations.
+Info (17036): Removed 4 MSB VCC or GND address nodes from RAM block "RegFile:regfile|altsyncram:register_rtl_0|altsyncram_im22:auto_generated|ALTSYNCRAM"
+Info (144001): Generated suppressed messages file C:/Users/ASUS/Desktop/mcpu_2/mcpu/output_files/mcpu.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 429 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 185 output pins
+    Info (21061): Implemented 210 logic cells
+    Info (21064): Implemented 32 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 615 warnings
+    Info: Peak virtual memory: 4848 megabytes
+    Info: Processing ended: Sun Nov 08 13:10:12 2020
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:27
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/ASUS/Desktop/mcpu_2/mcpu/output_files/mcpu.map.smsg.
+
+
